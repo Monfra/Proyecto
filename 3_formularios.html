@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Formulario</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
+  <link rel="stylesheet" href="./css/3_formularios.css">
+</head>
+<body>
+  <h1>Formulario</h1>
+  <div id="reloj"> </div>
+  <form class="ContactForm">
+  <legend>Envíanos tus comentarios</legend>
+  <input type="text" name="nombre" placeholder="Escribe tu nombre" title="tu nombre" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" required> 
+  <input type="tel" name="telefono" placeholder="Escribe tu numero telefonico" title="tu telefono" pattern="^[55 -|0-9]{11}$" required>
+  <input type="emai" name="email" placeholder="Escribe tu email" pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" title="tu email" required>
+  <input type="text" name="asunto" title="asunto a tratar" placeholder="Asunto a tratar" required>
+  <textarea name="comentarios" title="tus comentarios" placeholder="Escrie tus comentarios" cols="50" rows="5" required></textarea>
+  <input type="submit" value="Enviar"> 
+  <div class="ContactForm-preload u-hidden">
+    <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+  </div>
+  <div class="ContactForm-message u-hidden">
+    <p>Tu información ha sido enviada con éxito</p>
+  </div>
+  <div class="ContactForm-messageDia">
+    <p>Buenos días</p>
+  </div>
+  <div class="ContactForm-messageTarde">
+    <p>Buenas Tardes</p>
+  </div>
+  <div class="ContactForm-messageNoche">
+    <p>Buenas noches</p>
+  </div>
+  <div class="ContactForm-messageDormir">
+    <p>Vete a dormir</p>
+  </div>
+
+
+  </form>
+  <script src="./js/3_formularios.js"></script>
+</body>
+</html>
