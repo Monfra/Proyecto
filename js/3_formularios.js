@@ -1,11 +1,22 @@
 ;
+
+let saludo = document.getElementById("saludo");
+
+const btnEstilo = document.getElementById('estilo') 
+  btnEstilo.addEventListener('click', () => {
+  document.body.style.backgroundColor = '#9999FF'
+  btnEstilo.addEventListener('click', () => {
+    document.body.style.backgroundColor = '#FFF'
+  })
+})
+
 function actual() 
   {
-    fecha=new Date(); //Actualizar fecha.
+    fecha=new Date(); //Actualizar fecha
     hora=fecha.getHours(); //hora actual
     minuto=fecha.getMinutes(); //minuto actual
     segundo=fecha.getSeconds(); //segundo actual
-    mireloj = hora+" : "+minuto+" : "+segundo;	
+    mireloj = hora+" : " +minuto+" : "+segundo;	
     return mireloj; 
   }
 
@@ -17,12 +28,32 @@ function actualizar()
   }
   setInterval(actualizar,1000); //iniciar temporizador
 
-
+  let fecha=new Date(); //Actualizar fecha
+  let hora=fecha.getHours();
+   
+  if(hora >= 6 && hora <= 11)
+    {
+      document.getElementById("saludo").innerHTML = "<br><div class='is-active ContactForm-message u-hidden'><p>Buenas dias</p></div>";
+    }
+  else if (hora >=12 && hora <=18)
+    {
+      document.getElementById("saludo").innerHTML = "<br><div class='is-active ContactForm-message u-hidden'><p>Buenas tardes</p></div>";
+    }
+  else if (hora >=19 && hora <=23)
+    {
+     
+      document.getElementById("saludo").innerHTML = "<br><div class='is-active ContactForm-message u-hidden'><p>Buenas noches</p></div>";
+    }
+  else 
+    {
+      document.getElementById("saludo").innerHTML = "<br><div class='is-active ContactForm-message u-hidden'><p>Vete a dormir</p></div>";
+    }
+  
 ((d, c) => {
   const inputs = d.querySelectorAll('[required]'),
     preload = d.querySelector('.ContactForm-preload'),
     message = d.querySelector('.ContactForm-message')
-  //c(inputs)
+          //c(inputs)
 
   inputs.forEach(input => {
     let span = d.createElement('span')
@@ -66,3 +97,4 @@ function actualizar()
     }, 2000)
   })
 })(document, console.log);
+
